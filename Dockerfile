@@ -7,7 +7,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 
 COPY . /app
 
-RUN cd "/app" && cp .env.production .env && composer install
+RUN cd "/app" && cp .env.production .env && composer install && php artisan migrate
 
 WORKDIR /app
 
